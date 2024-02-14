@@ -1,177 +1,174 @@
-@import url('https://fonts.googleapis.com/css?family=Sacramento');
-#card {
-    height: 500px;
-    width: 800px;
-    margin: 5em auto;
-    position: fixed;
-    top: -15px;
-    left: 25%;
-    display: flex;
-    visibility: hidden;
-}
-
-#card h2 {
-    font-size: 3em;
-    margin: 0;
-    color: pink;
-    text-align: center;
-}
-
-#card p {
-    font-size: 1.5em;
-    text-align: justify;
-    padding-left: 30px;
-    /* Espacio en blanco a la izquierda */
-    padding-right: 30px;
-    /* Espacio en blanco a la derecha */
-}
-
-.side {
-    background: #eee;
-    height: 550px;
-    width: 400px;
-    /*    border:1px solid red; */
-    padding: 10px;
-}
-
-.side.one {
-    width: 320px;
-    transform: skew(10deg, 20deg);
-    background: linear-gradient(90deg, #fff, #fff 40%, #ddd);
-}
-
-.side.two {
-    transform: skew(10deg, -15deg);
-    background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
-}
-
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: 'Sacramento', cursive;
-    background-color: #f1e3d3;
-    overflow: hidden;
+ margin:0;
+ background: rgb(234, 223, 153);
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+svg.rose {
+  display: block;
+  width:600px;
+  padding-top: 10em;
+  margin-top: -100px;
 }
 
-.valentines-day {
-    position: relative;
-    cursor: pointer;
+h1 {
+ 
+  
+  
+    color: #ff69b4; /* Color del texto */
+    font-size: 36px;
+    margin-top: 100px;
+
+
 }
 
-.envelope {
-    position: relative;
-    filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3));
+@keyframes rose-animation {
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100%{
+       transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.envelope:before {
-    content: "";
-    position: absolute;
-    width: 254px;
-    height: 254px;
-    background-color: #ff9494;
-    transform: rotate(-45deg);
-    border-radius: 0 15px 0 0;
-    left: -37px;
-    top: -82px;
+.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9,.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17{
+  transform: scale(0);
+  transform-origin: center center;
+  opacity: 0;
+   animation: rose-animation 2s ease infinite 0.1s alternate;
 }
-
-.envelope:after {
-    content: "";
-    position: absolute;
-    background-color: #ff9494;
-    width: 360px;
-    height: 225px;
-    left: -90px;
-    top: 45px;
+.cls-6,.cls-7,.cls-8,.cls-9,.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17{
+  transform: scale(0);
+  transform-origin: center center;
+  opacity: 0;
+   animation: rose-animation 2s ease infinite 0.34s alternate;
 }
-
-.heart {
-    position: relative;
-    background-color: #e01911;
-    display: inline-block;
-    height: 180px;
-    top: 50px;
-    left: 0;
-    transform: rotate(-45deg);
-    width: 180px;
-    filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, .3));
-    transition: .5s;
+.cls-9,.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17{
+  transform: scale(0);
+  transform-origin: center center;
+  opacity: 0;
+   animation: rose-animation 2s ease infinite 0.5s alternate;
 }
-
-.heart:before,
-.heart:after {
-    content: "";
-    background-color: #e01911;
-    border-radius: 50%;
-    height: 180px;
-    width: 180px;
-    position: absolute;
+cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17{
+  transform: scale(0);
+  transform-origin: center center;
+  opacity: 0;
+   animation: rose-animation 2s ease infinite 0.2s alternate;
 }
-
-.heart:before {
-    top: -100px;
-    left: 0;
+.boingInUp {
+  -webkit-animation-name: boingInUp;
+          animation-name: boingInUp;
 }
+@-webkit-keyframes boingInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(-90deg);
+            transform: perspective(800px) rotateX(-90deg);
+  }
+  
+  50% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(50deg);
+            transform: perspective(800px) rotateX(50deg);
+  }
 
-.heart:after {
-    left: 100px;
-    top: 0;
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(0deg);
+            transform: perspective(800px) rotateX(0deg);
+  }
 }
-
-.front {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-right: 190px solid #fbd2d2;
-    border-top: 113px solid transparent;
-    border-bottom: 113px solid transparent;
-    top: 44px;
-    left: 80px;
-    z-index: 4;
+#hojas{
+  animation: boingInUp 2s ease infinite alternate  ;
 }
+@keyframes boingInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(-90deg);
+            transform: perspective(800px) rotateX(-90deg);
+  }
+  
+  50% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(50deg);
+            transform: perspective(800px) rotateX(50deg);
+  }
 
-.front:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 190px solid #fbd2d2;
-    border-top: 113px solid transparent;
-    border-bottom: 113px solid transparent;
-    top: -113px;
-    left: -170px;
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(0deg);
+            transform: perspective(800px) rotateX(0deg);
+  }
 }
-
-.front:after {
-    width: 0;
-    height: 0;
-    position: absolute;
-    content: "";
-    border-bottom: 150px solid #fce7e9;
-    border-right: 180px solid transparent;
-    border-left: 180px solid transparent;
-    top: -36px;
-    left: -170px;
+.puffIn {
+  -webkit-animation-name: puffIn;
+          animation-name: puffIn;
 }
+@-webkit-keyframes puffIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(2,2);
+            transform: scale(2,2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+  }
 
-.text {
-    position: absolute;
-    font-family: arial;
-    letter-spacing: 5px;
-    text-align: center;
-    color: white;
-    z-index: 2;
-    top: 80px;
-    left: 15px;
-    transition: .5s;
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(1,1);
+            transform: scale(1,1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
 }
+@keyframes puffIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(2,2);
+            transform: scale(2,2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+  }
+  50%{
+    opacity: 0.3;
+  }
 
-.valentines-day:hover .heart {
-    transform: translateY(-50px) rotate(-45deg);
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(1,1);
+            transform: scale(1,1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
 }
-
-.valentines-day:hover .text {
-    transform: translateY(-50px);
+#tallos{
+  animation: puffIn 2s infinite ease alternate;
+}
+#sombra_1{
+  visibility:hidden;
 }
